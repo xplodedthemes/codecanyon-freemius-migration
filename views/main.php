@@ -38,6 +38,7 @@ $current_id = !empty($atts['id']) ? $atts['id'] : null;
 $current_plugin = !empty($current_id) ? $plugins[$current_id] : null;
 $messages = $this->messages->get_error_messages();
 $title = sprintf($atts['form_title'], !empty($current_plugin) ? '<span>'.$current_plugin.'</span>' : __('Your', 'np-ctf'), '<strong>CodeCanyon</strong>', '<strong>XplodedThemes</strong>');
+$success = !empty($_GET['ctf_success']);
 ?>
 
 <div class="ctf-wrapper">
@@ -45,25 +46,36 @@ $title = sprintf($atts['form_title'], !empty($current_plugin) ? '<span>'.$curren
     <div class="ctf-middle">
         <div class="ctf-left">
 
-            <h3 class="entry-title">Our CodeCanyon Plugins <strong>Have Retired!</strong></h3>
+            <h1 class="entry-title">Our CodeCanyon Plugins <strong>Have Retired!</strong></h1>
             <p>
                 If you purchased one of the below plugins from CodeCanyon, please note that the CodeCanyon version has been retired, and will no longer be maintained or updated.
             </p>
             <p>
-                To continue receiving updates and security patches, please migrate your active CodeCanyon license across to our new licensing system and get 3 extended months of use for FREE!
+                To continue receiving new updates and security patches, please migrate your current CodeCanyon license to our new licensing system and get <strong>3 more months for FREE</strong>!
             </p>
             <p>
-                As a thanks for your support, we are offering <strong>40%</strong> for any new license you purchase! Use the code <strong>GD_BYE_CANYON</strong>
+                As a thanks for your support, we are offering <strong>40%</strong> for any new license you purchase! Use the code <strong>BYECANYON</strong>
             </p>
             <p>
-                If you have any issues while migrating, please <a href="">contact us</a>
+                If you have any issues while migrating, please <a href="<?php echo home_url('/support');?>">contact us</a>
             </p>
 
+            <br>
+
+            <h3 class="faq-title">It feels like I am being forced to migrate? Do I have to migrate?</h3>
+            <p>Absolutely not! You can choose to stay on the old plugin version, however, please note that it will no longer be updated, supported or maintained.</p>
+
+            <h3 class="faq-title">Why are we leaving CodeCanyon?</h3>
+            <p>All our plugins use Freemius for billing and license management and we prefer to have consistency across all our products and not having to release 2 different versions of each product.</p>
+
+            <h3 class="faq-title">It’s cool that we get 3 months free usage, but what happens after 3 months?</h3>
+
+            <p>There are a few options. You can choose to do nothing, and the plugin will revert to the free version. You can also choose to purchase a subscription or a lifetime license at a discounted price using the promo code above.</p>
         </div>
 
         <div class="ctf-right">
 
-            <h1 class="entry-title"><?php echo $title;?></h1>
+            <h2 class="entry-title"><?php echo $title;?></h2>
 
             <form method="post" id="ctf-form" class="ctf-form<?php echo !empty($messages) ? ' ctf-form-shake': ''; ?>">
 
@@ -71,11 +83,11 @@ $title = sprintf($atts['form_title'], !empty($current_plugin) ? '<span>'.$curren
 
                 <?php if ($messages) : ?>
                     <div class="notification is-danger">
-                        <button class="delete"></button>
                         <?php echo implode('<br>', $messages); ?>
                     </div>
                 <?php endif; ?>
 
+                <?php if(empty($success)): ?>
                 <div class="field">
                     <label class="label" for="np-ctf-panel-email"><?php echo $atts['form_id_label']; ?></label>
                     <div class="control">
@@ -89,6 +101,7 @@ $title = sprintf($atts['form_title'], !empty($current_plugin) ? '<span>'.$curren
                         </div>
                     </div>
                 </div>
+                <?php endif; ?>
 
                 <?php if(!empty($atts['id'])): ?>
 

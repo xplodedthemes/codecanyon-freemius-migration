@@ -444,13 +444,9 @@ if (!class_exists('Codecanyon_To_Freemius')) :
 
             $this->add_new_used_license_to_blog_option($data['license_key']);
 
+            $this->messages->add('license-migrated', sprintf(__('Your CodeCanyon License has been successfully migrated! Here is your new License Key: %s', 'np-ctf'), '<strong>'.$license->secret_key.'</strong>'));
+
             CTF_Logger::add('ctf_log_success', 'Email: ' . $user->email . ' CodeCanyon License Key: ' . $data['license_key'] . ' New Freemius License Key: ' . $license->secret_key);
-
-            $url = get_permalink();
-
-            wp_redirect($url . '?ctf_success=1');
-
-            die;
 
         } // end handle_form_submission;
 
