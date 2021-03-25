@@ -1,11 +1,17 @@
 html,body{
 	background: #23292d;
 	height: 100%;
+	color: #eee;
+	overflow:hidden;
 }
 
 .post{
 	background: #23292d;
 	box-shadow: none;
+}
+
+p:last-of-type{
+	margin-bottom:0;
 }
 
 article{
@@ -22,26 +28,67 @@ article{
 	}
 }
 
-h1.entry-title {
-	color:  #fff;
+.ctf-wrapper{
+	height: calc(100% - 66px);
+	display: flex;
+	flex-direction: row;
+	overflow: hidden;
+	border-top: 1px solid rgba(255,255,255,0.03);
+}
+.ctf-middle {
+	display: flex;
+	flex-direction: row;
+	position: relative;
+
+	@media only screen and (max-width: 768px) {
+		flex-direction: column;
+	}
+}
+
+.ctf-left{
+	background: #3273dc;
+}
+.ctf-left,
+.ctf-right {
+	width: 50%;
+	padding: 5%;
+	overflow: auto;
+
+	@media only screen and (max-width: 768px) {
+		width: 100%;
+		padding: 7%;
+	}
+}
+
+.entry-title {
+	color: #fff;
 	max-width: 600px;
-	margin: 0 auto 50px;
-	text-align: center;
-	font-weight:300;
+	font-weight: 300;
+	font-size: 40px;
+	margin-bottom:20px;
 
 	span {
 		font-weight: 600;
-		color: #3ba1e2;
+		color: #3273dc;
 	}
 
 	strong{
 		font-weight:700;
 	}
+
+	@media only screen and (max-width: 768px) {
+		font-size: 32px;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	h3 strong {
+		display: block;
+	}
 }
 
 .ctf-form {
-	max-width: 450px;
-	margin: 0 auto;
+
 	position: relative;
 
 	&.ctf-form-shake {
