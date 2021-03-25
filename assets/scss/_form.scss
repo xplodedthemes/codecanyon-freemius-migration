@@ -8,6 +8,20 @@ html,body{
 	box-shadow: none;
 }
 
+article{
+	height: calc(100% - 66px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	@media only screen and (max-width: 768px) {
+
+		height: calc(100% - 47px);
+
+	}
+}
+
 h1.entry-title {
 	color:  #fff;
 	max-width: 600px;
