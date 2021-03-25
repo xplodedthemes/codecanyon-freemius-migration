@@ -49,7 +49,7 @@ $success = !empty($_GET['ctf_success']);
 
             <h1 class="entry-title">Our CodeCanyon Plugins <strong>Have Retired!</strong></h1>
             <p>
-                If you purchased one of of our plugins from CodeCanyon, please note that the CodeCanyon version has been retired, and will no longer be maintained or updated.
+                If you purchased one of our plugins from CodeCanyon, please note that the CodeCanyon version has been retired, and will no longer be maintained or updated.
             </p>
             <p>
                 To continue receiving new updates and security patches, please migrate your current CodeCanyon license to our new licensing system and get <strong>3 more months for FREE</strong>!
