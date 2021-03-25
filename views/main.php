@@ -4,6 +4,7 @@
             $('#xt-plugins').on('change', function() {
 
                 $(this).closest('.control').find('.select').removeClass('is-info').addClass('is-loading');
+                $(this).closest('form').find('.conditionnal-field').hide();
 
                 var url = '<?php echo home_url('/codecanyon-license-migration'); ?>' + '?id='+$(this).val();
 
@@ -109,21 +110,21 @@ $success = !empty($_GET['ctf_success']);
                     $email = !empty($_POST['email']) ? $_POST['email'] : '';
                     $license_key = !empty($_POST['license_key']) ? $_POST['license_key'] : '';
                     ?>
-                    <div class="field">
+                    <div class="field conditionnal-field">
                         <label class="label" for="np-ctf-panel-email"><?php echo $atts['form_email_label']; ?></label>
                         <div class="control">
                             <input class="input is-info" type="email" name="email" value="<?php echo $email; ?>" placeholder="youremail@company.com" />
                         </div>
                     </div>
 
-                    <div class="field">
+                    <div class="field conditionnal-field">
                         <label class="label" for="np-ctf-panel-license-key"><?php echo $atts['form_license_label']; ?></label>
                         <div class="control">
                             <input class="input is-info" type="text" name="license_key" value="<?php echo $license_key; ?>" placeholder="XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX" />
                         </div>
                     </div>
 
-                    <div class="field">
+                    <div class="field conditionnal-field">
                         <div class="control">
                             <button class="button is-link" type="submit">
                                 <?php echo $atts['form_button_label']; ?>
