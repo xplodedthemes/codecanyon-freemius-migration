@@ -5,7 +5,7 @@
 
                 $(this).closest('.control').find('.select').removeClass('is-info').addClass('is-loading');
 
-                var url = '<?php echo home_url('/codecanyon-to-xt-migration'); ?>' + '?id='+$(this).val();
+                var url = '<?php echo home_url('/codecanyon-license-migration'); ?>' + '?id='+$(this).val();
 
                 if(location.href  !== url) {
                     location.href = url;
