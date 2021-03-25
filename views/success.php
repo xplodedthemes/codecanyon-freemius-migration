@@ -1,4 +1,3 @@
-
 <div class="notification is-success">
-    <?php echo implode('<br>', $messages); ?>
+    <?php echo sprintf(__('Your CodeCanyon License has been successfully migrated! Here is your new License Key: %s'), $key); ?>
 </div>
