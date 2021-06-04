@@ -20,11 +20,15 @@
 
     require_once(dirname(__FILE__) . '/FreemiusBase.php');
 
-    define('FS_SDK__USER_AGENT', 'fs-php-' . CTF_Freemius_Api_Base::VERSION);
+    if(!defined('FS_SDK__USER_AGENT')) {
+        define('FS_SDK__USER_AGENT', 'fs-php-' . CTF_Freemius_Api_Base::VERSION);
+    }
 
     $curl_version = curl_version();
 
-    define('FS_API__PROTOCOL', version_compare($curl_version['version'], '7.37', '>=') ? 'https' : 'http');
+    if(!defined('FS_API__PROTOCOL')) {
+        define('FS_API__PROTOCOL', version_compare($curl_version['version'], '7.37', '>=') ? 'https' : 'http');
+    }
 
     if ( ! defined('FS_API__ADDRESS'))
         define('FS_API__ADDRESS', FS_API__PROTOCOL . '://api.freemius.com');

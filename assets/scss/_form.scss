@@ -4,6 +4,9 @@ html,body{
 	color: #fefefe;
 	overflow:hidden;
 
+	@media only screen and (max-width: 768px) {
+		overflow:initial;
+	}
 }
 
 
@@ -29,6 +32,10 @@ html,body{
 		text-decoration: underline;
 	}
 
+	@media only screen and (max-width: 768px) {
+		overflow:initial;
+	}
+
 }
 .ctf-middle {
 	display: flex;
@@ -36,7 +43,7 @@ html,body{
 	position: relative;
 
 	@media only screen and (max-width: 768px) {
-		flex-direction: column;
+		display: block;
 	}
 }
 

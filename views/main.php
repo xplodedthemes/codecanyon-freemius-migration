@@ -55,7 +55,7 @@ $success = !empty($_GET['ctf_success']);
                 To continue receiving new updates and security patches, please migrate your current CodeCanyon license to our new licensing system and get <strong>3 more months for FREE</strong>!
             </p>
             <p>
-                As a thanks for your support, we are offering <strong>40%</strong> for any new license you purchase! Use the code <strong>BYECANYON</strong>
+                As a thanks for your support, we are offering <strong>40% OFF</strong> any new license you purchase! Use the code <strong>BYECANYON</strong>
             </p>
             <p>
                 If you have any issues while migrating, please <a href="<?php echo home_url('/support');?>">contact us</a>
@@ -67,7 +67,7 @@ $success = !empty($_GET['ctf_success']);
             <p>Absolutely not! You can choose to stay on the old plugin version, however, please note that it will no longer be updated, supported or maintained.</p>
 
             <h3 class="faq-title">Why are we leaving CodeCanyon?</h3>
-            <p>All our plugins use Freemius for billing and license management and we prefer to have consistency across all our products and not having to release 2 different versions of each product.</p>
+            <p>All our plugins use Freemius for billing and license management and we prefer to have consistency across all our products and not having to release 2 different versions for each product.</p>
 
             <h3 class="faq-title">It’s cool that we get 3 months free usage, but what happens after 3 months?</h3>
 
