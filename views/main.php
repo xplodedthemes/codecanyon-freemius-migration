@@ -26,7 +26,7 @@
 
             <?php if(!empty($_POST)): ?>
 
-            $("html, body").animate({ scrollTop: $('.ctf-right').offset().top }, 500);
+            $("html, body").animate({ scrollTop: $('.ctf-right').offset().top }, 300);
 
             <?php endif; ?>
         });
