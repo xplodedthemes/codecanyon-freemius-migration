@@ -77,7 +77,7 @@ $success = !empty($_GET['ctf_success']);
 
             <h3 class="faq-title">It’s cool that we get 3 months free usage, but what happens after 3 months?</h3>
 
-            <p>You can choose do nothing and keep using the plugin normally, however, you will no longer have access to new updates or support. Or, you can either purchase a annual or a lifetime license at a discounted price using the promo code above.</p>
+            <p>You can choose do nothing and keep using the plugin normally, however, you will no longer have access to new updates or support. Or, you can either purchase an annual or a lifetime license at a discounted price using the promo code above.</p>
         </div>
 
         <div class="ctf-right">
