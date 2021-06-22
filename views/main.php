@@ -38,7 +38,8 @@
 $plugins = array(
     '2907' => 'Woo Floating Cart',
     '2905' => 'Woo Quick View',
-    '2908' => 'Woo Variation Swatches'
+    '2908' => 'Woo Variation Swatches',
+    '3243' => 'Slick Menu'
 );
 
 $current_id = !empty($atts['id']) ? $atts['id'] : null;
