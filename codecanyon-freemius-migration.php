@@ -196,7 +196,7 @@ if (!class_exists('Codecanyon_To_Freemius')) :
             if (isset($_REQUEST['ctf_success']) && !empty($_REQUEST['ctf_key'])) {
 
                 $this->render('success', array(
-                    'key' => $_REQUEST['ctf_key']
+                    'key' => urldecode($_REQUEST['ctf_key'])
                 ));
 
             } // end if;
@@ -446,7 +446,7 @@ if (!class_exists('Codecanyon_To_Freemius')) :
 
             $url = get_permalink();
 
-            wp_redirect($url . '?ctf_success=1&ctf_key='.$license->secret_key);
+            wp_redirect($url . '?ctf_success=1&ctf_key='.urlencode($license->secret_key));
 
             die;
 
