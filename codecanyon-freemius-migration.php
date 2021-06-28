@@ -359,7 +359,7 @@ if (!class_exists('Codecanyon_To_Freemius')) :
                 'freemius_plugin_sk_apikey' => defined("FS__PLUGIN_" . $freemius_id . "_SK_APIKEY") ? constant("FS__PLUGIN_" . $freemius_id . "_SK_APIKEY") : '',
                 'freemius_plugin_plan_id' => defined("FS__PLUGIN_" . $freemius_id . "_PLAN_ID") ? constant("FS__PLUGIN_" . $freemius_id . "_PLAN_ID") : '',
                 'freemius_plugin_pricing_id' => defined("FS__PLUGIN_" . $freemius_id . "_PRICING_ID") ? constant("FS__PLUGIN_" . $freemius_id . "_PRICING_ID") : '',
-                'freemius_plugin_expires_at' => defined("FS__PLUGIN_EXPIRES_AT") ? constant("FS__PLUGIN_EXPIRES_AT") : '',
+                'freemius_plugin_expires_grace_period' => defined("FS__PLUGIN_EXPIRES_GRACE_PERIOD") ? constant("FS__PLUGIN_EXPIRES_GRACE_PERIOD") : '',
 
                 'codecanyon_api_key' => defined("CODECANYON_API_KEY") ? constant("CODECANYON_API_KEY") : '',
                 'codecanyon_plugin_id' => defined("FS__PLUGIN_" . $freemius_id . "_CODECANYON_ID") ? constant("FS__PLUGIN_" . $freemius_id . "_CODECANYON_ID") : '',
@@ -430,7 +430,7 @@ if (!class_exists('Codecanyon_To_Freemius')) :
             // check user has freemius license exists
             if (is_null($existing_license)) {
 
-                $license = $ctf_api->create_freemius_license($user->email);
+                $license = $ctf_api->create_freemius_license($user->email, $license);
 
             } else {
 

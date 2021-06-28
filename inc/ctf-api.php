@@ -27,7 +27,7 @@ class CTF_Api {
 	public $freemius_plugin_id;
 	public $freemius_plugin_plan_id;
 	public $freemius_plugin_pricing_id;
-	public $freemius_plugin_expires_at;
+	public $freemius_plugin_expires_grace_period;
 
 	public $codecanyon_api_key;
 	public $codecanyon_slug_plugin;
@@ -50,7 +50,7 @@ class CTF_Api {
 		$this->freemius_plugin_id         = $data['freemius_plugin_id'];
 		$this->freemius_plugin_plan_id    = $data['freemius_plugin_plan_id'];
 		$this->freemius_plugin_pricing_id = $data['freemius_plugin_pricing_id'];
-		$this->freemius_plugin_expires_at = $data['freemius_plugin_expires_at'];
+		$this->freemius_plugin_expires_grace_period = $data['freemius_plugin_expires_grace_period'];
 
 		$this->codecanyon_api_key     = $data['codecanyon_api_key'];
 		$this->codecanyon_slug_plugin = $data['codecanyon_slug_plugin'];
@@ -96,12 +96,27 @@ class CTF_Api {
 	 * @since 0.0.1
 	 *
 	 * @param string $email User email.
-	 *
+     * @param string $envato_license Envato License
+
 	 * @return array
 	 */
-	public function create_freemius_license($email) {
+	public function create_freemius_license($email, $envato_license = null) {
+
+	    if(empty($envato_license) || empty($envato_license->supported_until)) {
+	        return false;
+        }
 
 		$api = new CTF_Freemius_Api('developer', $this->freemius_dev_id, $this->freemius_dev_pk_apikey, $this->freemius_dev_sk_apikey);
+
+        $expiration_date = strtotime($envato_license->supported_until);
+        $today = strtotime("today midnight");
+        $expired = $expiration_date < $today;
+
+        if($expired){
+            $expire_at = date('Y-m-d H:i:s', strtotime('+'.$this->freemius_plugin_expires_grace_period));
+        } else {
+            $expire_at = date('Y-m-d H:i:s', strtotime('+'.$this->freemius_plugin_expires_grace_period), $expiration_date);
+        }
 
 		try {
 			// {plan_id: "4675", pricing_id: "3841", expires_at: "2099-08-22 03:00:00", send_email: true, email: "marcelo@wpultimo.com", period: 12}
@@ -110,9 +125,9 @@ class CTF_Api {
 				'plan_id'           => $this->freemius_plugin_plan_id,
 				'pricing_id'        => $this->freemius_plugin_pricing_id,
 				'plugin_id'         => $this->freemius_plugin_id,
-				'expires_at'        => $this->freemius_plugin_expires_at,
+				'expires_at'        => $expire_at,
 				'send_email'        => true,
-				'is_block_features' => true,
+				'is_block_features' => false,
 				'source'            => 6
 			));
 
@@ -208,6 +223,7 @@ class CTF_Api {
 
 			return (object) array(
 				'success'       => false,
+                'supported_until' => null,
 				'golden_ticket' => false,
 				'purchase'      => (object) array(
 					'refunded' => false,
@@ -223,6 +239,7 @@ class CTF_Api {
 		if ( isset($output->buyer) ) {
 			return (object) array(
 				'success'       => isset($output->buyer),
+				'supported_until' => $output->supported_until,
 				'golden_ticket' => isset($output->buyer),
 				'purchase'      => (object) array(
 					'refunded' => false,
@@ -232,6 +249,7 @@ class CTF_Api {
 
 		return (object) array(
 			'success'       => isset($output->buyer),
+            'supported_until' => $output->supported_until,
 			'golden_ticket' => isset($output->buyer),
 			'purchase'      => (object) array(
 				'refunded' => false,

@@ -51,7 +51,7 @@ define("FS__PLUGIN_PLAN_ID", "5678");
 define("FS__PLUGIN_PRICING_ID", "90123");
 
 // The expiration date you'd like to set for the migrated licenses.
-define("FS__PLUGIN_EXPIRES_AT", date('Y-m-d H:i:s', strtotime('+1 year')));
+define("FS__PLUGIN_EXPIRES_GRACE_PERIOD", '1 year');
 
 // Your CodeCanyon API key and the slug of the CodeCanyon product you are migrating its licenses.
 define("CODECANYON_API_KEY", "UNr.....");
