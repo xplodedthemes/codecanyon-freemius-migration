@@ -197,7 +197,8 @@ html {
 }
 
 .notification strong {
-	color: currentColor
+	color: currentColor;
+	white-space: nowrap;
 }
 
 .notification code,.notification pre {
