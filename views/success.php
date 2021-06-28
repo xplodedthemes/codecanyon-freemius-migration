@@ -4,6 +4,10 @@
 <div class="notification is-info">
     <strong><?php echo __('You will shortly receive an email with your account info and download link.'); ?></strong>
 </div>
+<div class="notification is-info">
+    <strong><?php echo __('Make sure to download the new plugin version and replace the old one on your website.'); ?></strong>
+
+</div>
 <div class="notification is-success">
     <strong><?php echo __('Here is your new license key:');?></strong>
     <span class="license-key"><?php echo $key;?></span>
