@@ -152,7 +152,7 @@ html {
 .button.is-loading::after, .loader, .select.is-loading::after, .control.is-loading::after {
 	-webkit-animation: spinAround 500ms infinite linear;
 	animation: spinAround 500ms infinite linear;
-	border: 2px solid #dbdbdb;
+	border: 2px solid #3273dc;
 	border-radius: 290486px;
 	border-right-color: transparent;
 	border-top-color: transparent;
@@ -164,7 +164,9 @@ html {
 }
 
 .button.is-loading::after {
-	position: absolute;
+	border: 2px solid #eee;
+	border-right-color: transparent;
+	border-top-color: transparent;
 	left: calc(50% - (1em / 2));
 	top: calc(50% - (1em / 2));
 	position: absolute!important
@@ -411,7 +413,7 @@ html {
 	margin-top: 0;
 	position: absolute;
 	right: .85em;
-	top: .75em;
+	top: .85em;
 	transform: none;
 }
 
