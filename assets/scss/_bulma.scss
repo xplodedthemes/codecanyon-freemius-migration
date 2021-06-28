@@ -188,7 +188,8 @@ html {
 	background-color: #f5f5f5;
 	border-radius: 4px;
 	position: relative;
-	padding: 1.25rem 2.5rem 1.25rem 1.5rem
+	padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+	font-weight: 600;
 }
 
 .notification a:not(.button):not(.dropdown-item) {
@@ -222,7 +223,10 @@ html {
 	background-color: #8ed4a6;
 	color: #222a2d;
 }
-
+.notification.is-info {
+	background-color: #efefef;
+	color: #222a2d;
+}
 .notification.is-danger {
 	background-color: #f14668;
 	color: #fff

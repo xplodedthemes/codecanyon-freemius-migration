@@ -99,6 +99,7 @@ html,body{
 .ctf-form {
 
 	position: relative;
+	font-size: 16px;
 
 	&.ctf-form-shake {
 		animation: ctf-form-shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
@@ -109,6 +110,7 @@ html,body{
 
 	.notification{
 		padding: 0.75rem 3rem 0.75rem 1rem;
+		font-weight: 600;
 
 		> .delete {
 			top: 50%;
