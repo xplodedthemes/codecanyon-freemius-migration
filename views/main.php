@@ -53,29 +53,13 @@ $success = !empty($_GET['ctf_success']);
 
     <div class="ctf-middle">
         <div class="ctf-left">
-
-            <h1 class="entry-title">Our CodeCanyon Plugins <strong>Have Retired!</strong></h1>
-            <p>
-                If you purchased one of our plugins from CodeCanyon, please note that the CodeCanyon version has been retired, and will no longer be maintained or updated.
-            </p>
-            <p>
-                To continue receiving new updates and security patches, please migrate your current CodeCanyon license to our internal licensing system and get <strong>3 more months of support & updates for FREE</strong>!
-            </p>
-            <p>
-                If you have any issues while migrating, please <a href="<?php echo home_url('/support');?>">contact us</a>
-            </p>
-
-            <br>
-
-            <h3 class="faq-title">It feels like I am being forced to migrate? Do I have to migrate?</h3>
-            <p>Absolutely not! You can choose to stay on the old plugin version, however, please note that it will no longer be updated, supported or maintained.</p>
-
-            <h3 class="faq-title">Why are we leaving CodeCanyon?</h3>
-            <p>All our plugins use Freemius for billing and license management and we prefer to have consistency across all our products and not having to release 2 different versions for each product.</p>
-
-            <h3 class="faq-title">It’s cool that we get 3 extra months of support & updates, but what happens after?</h3>
-
-            <p>You can choose do nothing and keep using the plugin normally, however, you will no longer have access to new updates or support. Or, you can either purchase an annual or a lifetime license directly from our website.</p>
+            <?php
+                $post = get_page_by_path('our-codecanyon-plugins-have-retired', OBJECT, 'post');
+                if(!empty($post)) {
+                    echo '<h1 class="entry-title">' . $post->post_title . '</h1>';
+                    echo $post->post_content;
+                }
+            ?>
         </div>
 
         <div class="ctf-right">
