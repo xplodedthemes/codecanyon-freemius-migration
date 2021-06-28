@@ -59,7 +59,7 @@ $success = !empty($_GET['ctf_success']);
                 If you purchased one of our plugins from CodeCanyon, please note that the CodeCanyon version has been retired, and will no longer be maintained or updated.
             </p>
             <p>
-                To continue receiving new updates and security patches, please migrate your current CodeCanyon license to our new licensing system and get <strong>3 more months of support & updates for FREE</strong>!
+                To continue receiving new updates and security patches, please migrate your current CodeCanyon license to our internal licensing system and get <strong>3 more months of support & updates for FREE</strong>!
             </p>
             <p>
                 As a thanks for your support, we are offering <strong>40% OFF</strong> any new license you purchase! Use the code <strong>BYECANYON</strong>
