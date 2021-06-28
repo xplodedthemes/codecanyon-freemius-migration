@@ -5,5 +5,5 @@
     <strong>
         <?php echo __('Here is your new license key:');?>
     </strong>
-    <span class="license-key"><?php echo $key;?>></span>
+    <span class="license-key"><?php echo $key;?></span>
 </div>
