@@ -280,7 +280,7 @@ if (!class_exists('Codecanyon_To_Freemius')) :
             } // end if;
 
             if (!isset($data['freemius_plugin_pk_apikey']) || !isset($data['freemius_plugin_sk_apikey']) || !isset($data['freemius_plugin_id']) ||
-                !isset($data['freemius_plugin_plan_id']) || !isset($data['freemius_plugin_pricing_id']) || !isset($data['freemius_plugin_expires_at'])) {
+                !isset($data['freemius_plugin_plan_id']) || !isset($data['freemius_plugin_pricing_id']) || !isset($data['freemius_plugin_expires_grace_period'])) {
 
                 $this->messages->add('invalid-freemius-plugin-data', __('An error happened. Please contact support.', 'np-ctf'));
                 CTF_Logger::add('ctf_log_error', implode('<br>', $this->messages->get_error_messages()));
