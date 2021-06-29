@@ -113,7 +113,7 @@ class CTF_Api {
         if($expired){
             $expire_at = date('Y-m-d H:i:s', strtotime('+'.$this->freemius_plugin_expires_grace_period));
         } else {
-            $expire_at = date('Y-m-d H:i:s', strtotime('+'.$this->freemius_plugin_expires_grace_period), $expiration_date);
+            $expire_at = date('Y-m-d H:i:s', strtotime('+'.$this->freemius_plugin_expires_grace_period, $expiration_date));
         }
 
 		try {

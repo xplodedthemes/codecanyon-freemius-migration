@@ -432,23 +432,24 @@ if (!class_exists('Codecanyon_To_Freemius')) :
 
                 $license = $ctf_api->create_freemius_license($user->email, $license);
 
+                if(!empty($license)) {
+                    $this->add_new_used_license_to_blog_option($data['license_key']);
+
+                    CTF_Logger::add('ctf_log_success', 'Email: ' . $user->email . ' CodeCanyon License Key: ' . $data['license_key'] . ' New Freemius License Key: ' . $license->secret_key);
+
+                    $url = get_permalink();
+
+                    wp_redirect($url . '?ctf_success=1&ctf_key=' . urlencode($license->secret_key));
+
+                    die;
+                }
+
             } else {
 
                 $this->messages->add('existing-license', sprintf(__('This user email: %s was already converted.', 'np-ctf'), $user->email));
                 CTF_Logger::add('ctf_log_error', implode('<br>', $this->messages->get_error_messages()));
-                return;
 
             } // end if;
-
-            $this->add_new_used_license_to_blog_option($data['license_key']);
-
-            CTF_Logger::add('ctf_log_success', 'Email: ' . $user->email . ' CodeCanyon License Key: ' . $data['license_key'] . ' New Freemius License Key: ' . $license->secret_key);
-
-            $url = get_permalink();
-
-            wp_redirect($url . '?ctf_success=1&ctf_key='.urlencode($license->secret_key));
-
-            die;
 
         } // end handle_form_submission;
 
