@@ -127,7 +127,7 @@ class CTF_Api {
 				'plugin_id'         => $this->freemius_plugin_id,
 				'expires_at'        => $expire_at,
 				'send_email'        => true,
-                'is_block_features' => 0,
+				'is_block_features' => true,
 				'source'            => 6
 			));
 
