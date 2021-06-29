@@ -24,11 +24,6 @@
                 button.addClass('is-loading');
             });
 
-            <?php if(!empty($_POST)): ?>
-
-            $("html, body").animate({ scrollTop: $('.ctf-right').offset().top }, 300);
-
-            <?php endif; ?>
         });
     })( jQuery );
 </script>
