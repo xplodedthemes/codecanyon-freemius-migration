@@ -416,6 +416,11 @@ html {
 	top: .85em;
 	transform: none;
 }
+@media only screen and (max-width: 768px) {
+	.select.is-loading::after {
+		top: .60em;
+	}
+}
 
 @-webkit-keyframes spinAround {
 	from {
