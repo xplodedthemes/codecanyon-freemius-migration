@@ -30,7 +30,6 @@ class CTF_Api {
 	public $freemius_plugin_expires_grace_period;
 
 	public $codecanyon_api_key;
-	public $codecanyon_slug_plugin;
 
 	/**
 	 * Constructor
@@ -53,7 +52,6 @@ class CTF_Api {
 		$this->freemius_plugin_expires_grace_period = $data['freemius_plugin_expires_grace_period'];
 
 		$this->codecanyon_api_key     = $data['codecanyon_api_key'];
-		$this->codecanyon_slug_plugin = $data['codecanyon_slug_plugin'];
 
 	}  // end __construct;
 
