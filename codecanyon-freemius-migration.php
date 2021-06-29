@@ -441,7 +441,6 @@ if (!class_exists('Codecanyon_To_Freemius')) :
 
                     wp_redirect($url . '?ctf_success=1&ctf_key=' . urlencode($license->secret_key));
 
-                    die;
                 }
 
             } else {
@@ -450,6 +449,8 @@ if (!class_exists('Codecanyon_To_Freemius')) :
                 CTF_Logger::add('ctf_log_error', implode('<br>', $this->messages->get_error_messages()));
 
             } // end if;
+
+            die;
 
         } // end handle_form_submission;
 
