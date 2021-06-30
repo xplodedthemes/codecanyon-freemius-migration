@@ -265,7 +265,7 @@ if (!class_exists('Codecanyon_To_Freemius')) :
 
             if ($this->is_license_key_already_used($data['license_key'])) {
 
-                $this->messages->add('used-license', __('This license key has already been used.', 'np-ctf'));
+                $this->messages->add('used-license', __('This purchase code was already migrated.', 'np-ctf'));
                 CTF_Logger::add('ctf_log_error', implode('<br>', $this->messages->get_error_messages()));
                 return false;
 
@@ -450,7 +450,7 @@ if (!class_exists('Codecanyon_To_Freemius')) :
 
             } else {
 
-                $this->messages->add('existing-license', sprintf(__('This user email: %s was already converted.', 'np-ctf'), $user->email));
+                $this->messages->add('existing-license', sprintf(__('This user email: %s was already migrated.', 'np-ctf'), $user->email));
                 CTF_Logger::add('ctf_log_error', implode('<br>', $this->messages->get_error_messages()));
 
             } // end if;
