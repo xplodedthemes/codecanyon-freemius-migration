@@ -448,12 +448,12 @@ if (!class_exists('Codecanyon_To_Freemius')) :
                     CTF_Logger::add('ctf_log_error', implode('<br>', $this->messages->get_error_messages()));
                 }
 
-            //} else {
-
-            //    $this->messages->add('existing-license', sprintf(__('This user email: %s was already migrated.', 'np-ctf'), $user->email));
-            //    CTF_Logger::add('ctf_log_error', implode('<br>', $this->messages->get_error_messages()));
-
-            //} // end if;
+//            } else {
+//
+//                $this->messages->add('existing-license', sprintf(__('This user email: %s was already migrated.', 'np-ctf'), $user->email));
+//                CTF_Logger::add('ctf_log_error', implode('<br>', $this->messages->get_error_messages()));
+//
+//            } // end if;
 
         } // end handle_form_submission;
 
