@@ -425,10 +425,10 @@ if (!class_exists('Codecanyon_To_Freemius')) :
 
             } // end if;
 
-            $existing_license = $ctf_api->get_licences_by_user_id($user->id);
+            //$existing_license = $ctf_api->get_licences_by_user_id($user->id);
 
             // check user has freemius license exists
-            if (is_null($existing_license)) {
+            //if (is_null($existing_license)) {
 
                 $license = $ctf_api->create_freemius_license($user->email, $license);
 
@@ -448,12 +448,12 @@ if (!class_exists('Codecanyon_To_Freemius')) :
                     CTF_Logger::add('ctf_log_error', implode('<br>', $this->messages->get_error_messages()));
                 }
 
-            } else {
+            //} else {
 
-                $this->messages->add('existing-license', sprintf(__('This user email: %s was already migrated.', 'np-ctf'), $user->email));
-                CTF_Logger::add('ctf_log_error', implode('<br>', $this->messages->get_error_messages()));
+            //    $this->messages->add('existing-license', sprintf(__('This user email: %s was already migrated.', 'np-ctf'), $user->email));
+            //    CTF_Logger::add('ctf_log_error', implode('<br>', $this->messages->get_error_messages()));
 
-            } // end if;
+            //} // end if;
 
         } // end handle_form_submission;
 
