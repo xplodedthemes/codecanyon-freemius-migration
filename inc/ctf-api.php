@@ -235,7 +235,6 @@ class CTF_Api {
 
 		// Invalid license
 
-        var_dump($output->item->id, $codecanyon_id);
 		if ( !isset($output->buyer) || ((string)$output->item->id !== (string)$codecanyon_id)) {
 			return (object) array(
 				'success'       => false,
