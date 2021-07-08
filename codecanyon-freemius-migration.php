@@ -196,7 +196,7 @@ if (!class_exists('Codecanyon_To_Freemius')) :
             if (isset($_REQUEST['ctf_success']) && !empty($_REQUEST['ctf_key'])) {
 
                 $this->render('success', array(
-                    'key' => urldecode($_REQUEST['ctf_key'])
+                    'key' => $_REQUEST['ctf_key']
                 ));
 
             } // end if;
@@ -398,7 +398,7 @@ if (!class_exists('Codecanyon_To_Freemius')) :
 
             $ctf_api = new CTF_Api($data);
 
-            $license = $ctf_api->verify_envato_purchase_code($data['license_key']);
+            $license = $ctf_api->verify_envato_purchase_code($data['license_key'], $data['codecanyon_plugin_id']);
 
             if ($this->is_debug_mode()) {
 

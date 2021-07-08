@@ -204,9 +204,9 @@ class CTF_Api {
 	 *
 	 * @param array $code CodeCanyon License key.
 	 *
-	 * @return array
+	 * @return object
 	 */
-	public function verify_envato_purchase_code($code) {
+	public function verify_envato_purchase_code($code, $codecanyon_id) {
 
 		if (strlen($code) !== 36) {
 			return false;
@@ -233,10 +233,12 @@ class CTF_Api {
 		// Decode returned JSON
 		$output = json_decode(wp_remote_retrieve_body($response));
 
-		// Return output
-		if ( isset($output->buyer) ) {
+		// Invalid license
+
+        var_dump($output->item->id, $codecanyon_id);
+		if ( !isset($output->buyer) || ((string)$output->item->id !== (string)$codecanyon_id)) {
 			return (object) array(
-				'success'       => isset($output->buyer),
+				'success'       => false,
 				'supported_until' => $output->supported_until,
 				'golden_ticket' => isset($output->buyer),
 				'purchase'      => (object) array(
