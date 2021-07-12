@@ -118,20 +118,24 @@ class CTF_Api {
 
 		try {
 			// {plan_id: "4675", pricing_id: "3841", expires_at: "2099-08-22 03:00:00", send_email: true, email: "marcelo@wpultimo.com", period: 12}
-			$result = $api->Api('/plugins/plugin_id/plans/plan_id/pricing/pricing_id/licenses.json', 'POST', array(
+			$result = $api->Api('/plugins/'.$this->freemius_plugin_id.'/plans/'.$this->freemius_plugin_plan_id.'/pricing/'.$this->freemius_plugin_pricing_id.'/licenses.json', 'POST', array(
 				'email'             => $email,
 				'plan_id'           => $this->freemius_plugin_plan_id,
 				'pricing_id'        => $this->freemius_plugin_pricing_id,
 				'plugin_id'         => $this->freemius_plugin_id,
 				'expires_at'        => $expire_at,
 				'send_email'        => true,
-				'is_block_features' => true,
+				'is_block_features' => false,
 				'source'            => 6
 			));
 
 		} catch (Exception $e) {
 			return false;
 		} // end try;
+
+        $api->Api('/plugins/'.$this->freemius_plugin_id.'/licenses/'.$result->id.'.json', 'PUT', array(
+            'is_block_features' => false
+        ));
 
 		return $result;
 
